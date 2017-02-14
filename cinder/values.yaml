@@ -67,11 +67,15 @@ database:
 ceph:
   enabled: true
   monitors: []
-  cinder_user: "admin"
+  cinder_user: "cinder"
+  cinder_keyring: null
+  admin_user: "admin"
   # a null value for the keyring will
   # attempt to use the key from
   # common/secrets/ceph-client-key
-  cinder_keyring: null
+  admin_keyring: null
+  glance_user: "glance"
+  glance_keyring: null
 
 backends:
   enabled:

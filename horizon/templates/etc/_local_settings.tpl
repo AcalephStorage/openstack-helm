@@ -26,7 +26,7 @@ WEBROOT = '/'
 # with the list of host/domain names that the application can serve.
 # For more information see:
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*',]
 
 # Set SSL proxy settings:
 # For Django 1.4+ pass this header from the proxy after terminating the SSL,
@@ -206,8 +206,8 @@ OPENSTACK_KEYSTONE_BACKEND = {
 # Toggle LAUNCH_INSTANCE_LEGACY_ENABLED and LAUNCH_INSTANCE_NG_ENABLED to
 # determine the experience to enable.  Set them both to true to enable
 # both.
-#LAUNCH_INSTANCE_LEGACY_ENABLED = True
-#LAUNCH_INSTANCE_NG_ENABLED = False
+LAUNCH_INSTANCE_LEGACY_ENABLED = True
+LAUNCH_INSTANCE_NG_ENABLED = True
 
 # The Xen Hypervisor has the ability to set the mount point for volumes
 # attached to instances (other Hypervisors currently do not). Setting
@@ -259,22 +259,22 @@ OPENSTACK_NEUTRON_NETWORK = {
 # The OPENSTACK_IMAGE_BACKEND settings can be used to customize features
 # in the OpenStack Dashboard related to the Image service, such as the list
 # of supported image formats.
-#OPENSTACK_IMAGE_BACKEND = {
-#    'image_formats': [
-#        ('', _('Select format')),
-#        ('aki', _('AKI - Amazon Kernel Image')),
-#        ('ami', _('AMI - Amazon Machine Image')),
-#        ('ari', _('ARI - Amazon Ramdisk Image')),
-#        ('docker', _('Docker')),
-#        ('iso', _('ISO - Optical Disk Image')),
-#        ('ova', _('OVA - Open Virtual Appliance')),
-#        ('qcow2', _('QCOW2 - QEMU Emulator')),
-#        ('raw', _('Raw')),
-#        ('vdi', _('VDI - Virtual Disk Image')),
-#        ('vhd', ('VHD - Virtual Hard Disk')),
-#        ('vmdk', _('VMDK - Virtual Machine Disk')),
-#    ]
-#}
+OPENSTACK_IMAGE_BACKEND = {
+    'image_formats': [
+        ('', _('Select format')),
+        ('aki', _('AKI - Amazon Kernel Image')),
+        ('ami', _('AMI - Amazon Machine Image')),
+        ('ari', _('ARI - Amazon Ramdisk Image')),
+        ('docker', _('Docker')),
+        ('iso', _('ISO - Optical Disk Image')),
+        ('ova', _('OVA - Open Virtual Appliance')),
+        ('qcow2', _('QCOW2 - QEMU Emulator')),
+        ('raw', _('Raw')),
+        ('vdi', _('VDI - Virtual Disk Image')),
+        ('vhd', ('VHD - Virtual Hard Disk')),
+        ('vmdk', _('VMDK - Virtual Machine Disk')),
+    ]
+}
 
 # The IMAGE_CUSTOM_PROPERTY_TITLES settings is used to customize the titles for
 # image custom property attributes that appear on image detail pages.

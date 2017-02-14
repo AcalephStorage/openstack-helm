@@ -61,6 +61,14 @@ spec:
               mountPath: /etc/ceph/ceph.client.{{ .Values.ceph.cinder_user }}.keyring
               subPath: ceph.client.{{ .Values.ceph.cinder_user }}.keyring
               readOnly: true
+            - name: cephclientadminkeyring
+              mountPath: /etc/ceph/ceph.client.{{ .Values.ceph.admin_user }}.keyring
+              subPath: ceph.client.{{ .Values.ceph.admin_user }}.keyring
+              readOnly: true
+            - name: cephclientglancekeyring
+              mountPath: /etc/ceph/ceph.client.{{ .Values.ceph.glance_user }}.keyring
+              subPath: ceph.client.{{ .Values.ceph.glance_user }}.keyring
+              readOnly: true
       volumes:
         - name: pod-etc-cinder
           emptyDir: {}
@@ -73,5 +81,11 @@ spec:
           configMap:
             name: cinder-etc
         - name: cephclientcinderkeyring
+          configMap:
+            name: cinder-etc
+        - name: cephclientglancekeyring
+          configMap:
+            name: cinder-etc
+        - name: cephclientadminkeyring
           configMap:
             name: cinder-etc

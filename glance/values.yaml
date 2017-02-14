@@ -61,12 +61,16 @@ database:
 ceph:
   enabled: true
   monitors: []
-  glance_user: "admin"
+  glance_user: "glance"
   glance_pool: "images"
   # a null value for the keyring will
   # attempt to use the key from
   # common/secrets/ceph-client-key
   glance_keyring: null
+  admin_user: "admin"
+  admin_keyring: null
+  cinder_user: "cinder"
+  cinder_keyring: null
 
 misc:
   workers: 8

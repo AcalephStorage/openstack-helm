@@ -80,6 +80,14 @@ spec:
               mountPath: /etc/ceph/ceph.client.{{ .Values.ceph.glance_user }}.keyring
               subPath: ceph.client.{{ .Values.ceph.glance_user }}.keyring
               readOnly: true
+            - name: cephclientadminkeyring
+              mountPath: /etc/ceph/ceph.client.{{ .Values.ceph.admin_user }}.keyring
+              subPath: ceph.client.{{ .Values.ceph.admin_user }}.keyring
+              readOnly: true
+            - name: cephclientcinderkeyring
+              mountPath: /etc/ceph/ceph.client.{{ .Values.ceph.cinder_user }}.keyring
+              subPath: ceph.client.{{ .Values.ceph.cinder_user }}.keyring
+              readOnly: true
 {{- end }}
       volumes:
         - name: glanceapiconf
@@ -97,6 +105,12 @@ spec:
           configMap:
             name: glance-etc
         - name: cephclientglancekeyring
+          configMap:
+            name: glance-etc
+        - name: cephclientadminkeyring
+          configMap:
+            name: glance-etc
+        - name: cephclientcinderkeyring
           configMap:
             name: glance-etc
 {{- end }}

@@ -13,3 +13,7 @@ data:
 {{ tuple "etc/_ceph.conf.tpl" . | include "template" | indent 4 }}
   ceph.client.{{ .Values.ceph.cinder_user }}.keyring: |+
 {{ tuple "etc/_ceph-cinder.keyring.tpl" . | include "template" | indent 4 }}
+  ceph.client.{{ .Values.ceph.admin_user }}.keyring: |+
+{{ tuple "etc/_ceph-admin.keyring.tpl" . | include "template" | indent 4 }}
+  ceph.client.{{ .Values.ceph.glance_user }}.keyring: |+
+{{ tuple "etc/_ceph-glance.keyring.tpl" . | include "template" | indent 4 }}

@@ -46,14 +46,14 @@ resources:
       memory: "128Mi"
       cpu: "500m"
 
-# mits:typically overriden by environmental 
+# mits:typically overriden by environmental
 # values, but should include all endpoints
 # required by this chart
 endpoints:
   keystone:
     hosts:
       default: keystone-api
-    path: /v2.0
+    path: /v3
     type: identity
     scheme: 'http'
     port:
