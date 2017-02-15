@@ -47,18 +47,34 @@ rabbit_password = {{ .Values.messaging.password }}
 rabbit_ha_queues = true
 rabbit_hosts = {{ .Values.messaging.hosts }}
 
-[rbd1]
+[rbd_hdd]
 volume_driver = cinder.volume.drivers.rbd.RBDDriver
-rbd_pool = {{ .Values.backends.rbd1.pool }}
+rbd_pool = {{ .Values.backends.rbd_hdd.pool }}
 rbd_ceph_conf = /etc/ceph/ceph.conf
 rbd_flatten_volume_from_snapshot = false
 rbd_max_clone_depth = 5
 rbd_store_chunk_size = 4
 rados_connect_timeout = -1
-{{- if .Values.backends.rbd1.secret }}
-rbd_user = {{ .Values.backends.rbd1.user }}
+{{- if .Values.backends.rbd_hdd.secret }}
+rbd_user = {{ .Values.backends.rbd_hdd.user }}
 {{- else }}
 rbd_secret_uuid = {{- include "secrets/ceph-client-key" . -}}
 {{- end }}
-rbd_secret_uuid = {{ .Values.backends.rbd1.secret }}
+rbd_secret_uuid = {{ .Values.backends.rbd_hdd.secret }}
+report_discard_supported = True
+
+[rbd_ssd]
+volume_driver = cinder.volume.drivers.rbd.RBDDriver
+rbd_pool = {{ .Values.backends.rbd_ssd.pool }}
+rbd_ceph_conf = /etc/ceph/ceph.conf
+rbd_flatten_volume_from_snapshot = false
+rbd_max_clone_depth = 5
+rbd_store_chunk_size = 4
+rados_connect_timeout = -1
+{{- if .Values.backends.rbd_ssd.secret }}
+rbd_user = {{ .Values.backends.rbd_ssd.user }}
+{{- else }}
+rbd_secret_uuid = {{- include "secrets/ceph-client-key" . -}}
+{{- end }}
+rbd_secret_uuid = {{ .Values.backends.rbd_hdd.secret }}
 report_discard_supported = True

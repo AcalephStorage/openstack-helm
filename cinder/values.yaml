@@ -79,11 +79,16 @@ ceph:
 
 backends:
   enabled:
-  - rbd1
-  rbd1:
+  - rbd_hdd
+  - rbd_ssd
+  rbd_hdd:
     secret: null
-    user: "admin"
-    pool: "volumes"
+    user: "cinder"
+    pool: "compute-stanadard"
+  rbd_ssd:
+    secret: null
+    user: "cinder"
+    pool: "compute-speed"
 
 glance:
   proto: "http"
