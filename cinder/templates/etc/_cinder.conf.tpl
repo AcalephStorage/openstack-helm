@@ -76,5 +76,5 @@ rbd_user = {{ .Values.backends.ssd.user }}
 {{- else }}
 rbd_secret_uuid = {{- include "secrets/ceph-client-key" . -}}
 {{- end }}
-rbd_secret_uuid = {{ .Values.backends.rbd_hdd.secret }}
+rbd_secret_uuid = {{ .Values.backends.ssd.secret }}
 report_discard_supported = True
