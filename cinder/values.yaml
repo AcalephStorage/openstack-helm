@@ -79,13 +79,13 @@ ceph:
 
 backends:
   enabled:
-  - rbd_hdd
-  - rbd_ssd
-  rbd_hdd:
+  - hdd
+  - ssd
+  hdd:
     secret: null
     user: "cinder"
     pool: "compute-stanadard"
-  rbd_ssd:
+  ssd:
     secret: null
     user: "cinder"
     pool: "compute-speed"
