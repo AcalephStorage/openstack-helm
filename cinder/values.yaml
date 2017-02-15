@@ -84,7 +84,7 @@ backends:
   hdd:
     secret: null
     user: "cinder"
-    pool: "compute-stanadard"
+    pool: "compute-standard"
   ssd:
     secret: null
     user: "cinder"
