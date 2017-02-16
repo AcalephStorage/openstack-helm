@@ -49,7 +49,7 @@ rabbit_hosts = {{ .Values.messaging.hosts }}
 
 [hdd]
 volume_driver = cinder.volume.drivers.rbd.RBDDriver
-volume_backend_name = hdd
+volume_backend_name = HDD
 rbd_pool = {{ .Values.backends.hdd.pool }}
 rbd_ceph_conf = /etc/ceph/ceph.conf
 rbd_flatten_volume_from_snapshot = false
@@ -66,7 +66,7 @@ report_discard_supported = True
 
 [ssd]
 volume_driver = cinder.volume.drivers.rbd.RBDDriver
-volume_backend_name = ssd
+volume_backend_name = SSD
 rbd_pool = {{ .Values.backends.ssd.pool }}
 rbd_ceph_conf = /etc/ceph/ceph.conf
 rbd_flatten_volume_from_snapshot = false
