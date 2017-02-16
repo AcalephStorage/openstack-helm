@@ -36,7 +36,7 @@ arp_responder = false
 
 [ovs]
 bridge_mappings = {{ include "joinListWithComma" .Values.ml2.ovs.bridge_mappings }}
-tenant_network_type = {{ .Values.ml2.agent.tunnel_types }}
+tenant_network_type = {{ .Values.ml2.ovs.tenant_network_type }}
 
 [vxlan]
 l2_population = true

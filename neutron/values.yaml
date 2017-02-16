@@ -62,6 +62,7 @@ network:
   interface:
     external: enp12s0f0
     default: enp11s0f0
+    tunnel: null
   port:
     server: 9696
     metadata: 8775
@@ -115,7 +116,7 @@ metadata:
 ml2:
   tenant_network_types: "flat"
   agent:
-    tunnel_types: "gre"
+    tunnel_types: "gre,vxlan,flat"
   type_drivers:
     - flat
   mechanism_drivers:
@@ -136,6 +137,7 @@ ml2:
       br-physnet1: enp11s0f0
     bridge_mappings:
       - "physnet1:br-physnet1"
+    tenant_network_type: "flat"
 
 dependencies:
   server:
