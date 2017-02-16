@@ -115,7 +115,7 @@ metadata:
 ml2:
   tenant_network_types: "flat"
   agent:
-    tunnel_types: null
+    tunnel_types: "gre"
   type_drivers:
     - flat
   mechanism_drivers:
