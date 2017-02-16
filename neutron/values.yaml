@@ -104,6 +104,7 @@ metadata_agent:
     debug: 'True'
 
 neutron:
+  metadata_secret: "password"
   workers: 4
   default:
     l3_ha_network_type: gre
